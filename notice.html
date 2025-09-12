@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Notice Board</title>
+   <!-- Favicon (logo shown in tab) -->
+  <link rel="icon" type="image/png" href="logo.png">
+      
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab:400,100,300,700" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Roboto Slab', serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    /* Navbar */
+    .navbar-brand img {
+  height: 60px; /* adjust as per your need */
+  width: auto;
+}
+    #mainNav { background-color: #212529; }
+    #mainNav .navbar-brand { font-weight: 700; color: #ffc800; font-size: 1.5rem; }
+    #mainNav .nav-link { color: #fff; }
+    #mainNav .nav-link:hover { color: #ffc800; }
+    /* Masthead */
+    header.masthead {
+      padding: 8rem 0;
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+    }
+    header.masthead .masthead-heading { font-size: 3rem; margin-bottom: 1rem; }
+    header.masthead .masthead-subheading { font-size: 1.25rem; margin-bottom: 2rem; }
+    /* Notices */
+    .notice-card {
+      border: 1px solid #ddd;
+      border-left: 6px solid #ffc800;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #fff;
+      transition: all .3s;
+    }
+    .notice-card:hover {
+      background: #fdf7dd;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .notice-date { font-size: 0.9rem; color: #666; }
+    /* Footer */
+    footer { background-color: #212529; color: #fff; padding: 2rem 0; text-align: center; }
+  </style>
+</head>
+<body id="page-top">
+
+  <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="logo.png" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+                        <li class="nav-item"><a class="nav-link" href="notice.html">Notice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="team.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="auth.html">Join Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+  
+
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead-subheading">Stay Updated</div>
+      <div class="masthead-heading text-uppercase">Notice Board</div>
+    </div>
+  </header>
+  
+  <!-- Paste this directly AFTER your <nav> ... </nav> -->
+<style>
+  :root{
+    --nav-height: 70px; /* adjust to match your navbar height (try 56 or 70px) */
+    --banner-height: 44px;
+  }
+
+  /* push banner below the fixed navbar */
+  .promo-banner-wrapper{
+    margin-top: var(--nav-height);
+  }
+
+  .promo-banner{
+    height: var(--banner-height);
+    overflow: hidden;
+    background: linear-gradient(90deg,#2563eb,#7c3aed); /* blue → purple */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-family: inherit;
+    padding: 0 1rem;
+  }
+
+  /* moving text */
+  .promo-track{
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%; /* start off-screen to the right */
+    animation: promoMove 18s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes promoMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* pause on hover */
+  .promo-banner:hover .promo-track {
+    animation-play-state: paused;
+  }
+
+  /* responsive font sizing */
+  @media (max-width: 768px) {
+    .promo-banner { font-size: 0.95rem; }
+  }
+</style>
+
+<div class="promo-banner-wrapper">
+  <div class="promo-banner" role="region" aria-label="Promotional banner">
+    <div class="promo-track">
+      🎉 Big oppertunity Coming Soon! &nbsp;|&nbsp; 🚀 Internship Program 2025 — Apply Now! &nbsp;|&nbsp; 📢 Annual General Meeting on March 5, 2025!
+    </div>
+  </div>
+</div>
+
+  <!-- Notices Section -->
+  <section class="page-section bg-light" id="notices">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Latest Notices</h2>
+        <h3 class="section-subheading text-muted">Announcements & Important Updates</h3>
+      </div>
+    
+  
+      <!-- Notice 1 -->
+      <div class="notice-card">
+        <h5><i class="fas fa-bullhorn text-warning"></i> Annual General Meeting</h5>
+        <p class="notice-date">Published: Feb 12, 2025</p>
+        <p>The Annual General Meeting will be held on March 5th, 2025 at the company auditorium. Attendance is mandatory for all employees.</p>
+      </div>
+
+      <!-- Notice 2 -->
+      <div class="notice-card">
+        <h5><i class="fas fa-calendar-alt text-warning"></i> Holiday Announcement</h5>
+        <p class="notice-date">Published: Jan 28, 2025</p>
+        <p>The office will remain closed on February 15th in observance of the regional holiday.</p>
+      </div>
+
+      <!-- Notice 3 -->
+      <div class="notice-card">
+        <h5><i class="fas fa-briefcase text-warning"></i> Internship Program</h5>
+        <p class="notice-date">Published: Jan 10, 2025</p>
+        <p>Applications are now open for the Summer Internship Program 2025. Interested students may apply before March 1st.</p>
+      </div>
+    </div>
+  </section>
+      <!-- Notice 4 -->
+      <div class="notice-card">
+        <h5><i class="fas fa-briefcase text-warning"></i> Internship Program</h5>
+        <p class="notice-date">Published: Jan 10, 2025</p>
+        <p>Applications are now open for the Summer Internship Program 2025. Interested students may apply before March 1st.</p>
+      </div>
+    </div>
+  </section>
+      <!-- Notice 5 -->
+      <div class="notice-card">
+        <h5><i class="fas fa-briefcase text-warning"></i> Internship Program</h5>
+        <p class="notice-date">Published: Jan 10, 2025</p>
+        <p>Applications are now open for the Internship Program 2025. Interested students may apply before aug 1st.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+  
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Our Company. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
