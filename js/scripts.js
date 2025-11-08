@@ -52,3 +52,24 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+let lastScrollTop = 0;
+  const sticker = document.getElementById('internshipSticker');
+  
+  window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down - slide sticker up and hide
+      sticker.classList.add('small');
+    } else {
+      // Scrolling up - show sticker near center again
+      sticker.classList.remove('small');
+    }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+  
+  function redirectToInternship() {
+    window.location.href = 'notice.html#notices'; // Update this link accordingly
+  }
