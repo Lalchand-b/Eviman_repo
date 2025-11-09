@@ -73,3 +73,57 @@ let lastScrollTop = 0;
   function redirectToInternship() {
     window.location.href = 'notice.html#notices'; // Update this link accordingly
   }
+
+let slideIndex = 0;
+    let timer;
+
+    function showSlide(n) {
+      const slides = document.getElementsByClassName("slides");
+      const dots = document.getElementsByClassName("dot");
+
+      if (n >= slides.length) {
+        slideIndex = 0;
+      }
+      if (n < 0) {
+        slideIndex = slides.length - 1;
+      }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].style.position = "absolute";
+      }
+
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex].style.display = "block";
+      slides[slideIndex].style.position = "relative";
+      dots[slideIndex].className += " active";
+    }
+
+    function nextSlide() {
+      slideIndex++;
+      showSlide(slideIndex);
+    }
+
+    function changeSlide(n) {
+      clearInterval(timer);
+      slideIndex += n;
+      showSlide(slideIndex);
+      timer = setInterval(nextSlide, 4000);
+    }
+
+    function currentSlide(n) {
+      clearInterval(timer);
+      slideIndex = n - 1;
+      showSlide(slideIndex);
+      timer = setInterval(nextSlide, 4000);
+    }
+
+    function startSlider() {
+      showSlide(slideIndex);
+      timer = setInterval(nextSlide, 4000);
+    }
+
+    document.addEventListener('DOMContentLoaded', startSlider);
